@@ -1,11 +1,28 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to YouTube</title>
 </head>
 <body>
+    <h1>Redirecting to YouTube...</h1>
+    <p>Redirecting in <span id="timer">3</span> seconds.</p>
+
     <script>
-        window.location.replace("https://stripchat.com/");
+        let seconds = 3;
+        const timer = document.getElementById("timer");
+
+        const countdown = setInterval(() => {
+            seconds--;
+            timer.textContent = seconds;
+
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.replace("https://stripchat.com/");
+            }
+        }, 1000);
     </script>
 </body>
 </html>
